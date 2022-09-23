@@ -1,41 +1,33 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
-  * main - Prints a Fizz Buzz program
-  *
-  * Return: Always 0 (Success)
-  */
-int main(void)
+ * print_triangle - print a triangle aligned right, using '#'
+ * @size: Size of triangle
+ */
+void print_triangle(int size)
 {
-	int x;
+	int c, i, j;
 
-	for (x = 1; x <= 100; x++)
+	c = 0;
+	i = size - 1;
+	while (c < size)
 	{
-		if ((x % 3 == 0) && (x % 5 == 0))
+		i = size - 1 - c;
+		j = c + 1;
+		while (i > 0)
 		{
-			printf("FizzBuzz");
+			_putchar(' ');
+			i--;
 		}
-		else if (x % 3 == 0)
+		while (j > 0)
 		{
-			printf("Fizz");
+			_putchar('#');
+			j--;
 		}
-		else if (x % 5 == 0)
-		{
-			printf("Buzz");
-		}
-		else
-		{
-			printf("%d", x);
-		}
-
-		if (x != 100)
-		{
-			printf(" ");
-		}
+		_putchar('\n');
+		c++;
 	}
 
-	printf("\n");
-
-	return (0);
+	if (size <= 0)
+		_putchar('\n');
 }
